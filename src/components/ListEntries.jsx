@@ -3,8 +3,9 @@ import Entry from "./Entry";
 
 const GET_ENTRIES = gql`
     query {
-       entries {
+       entries(section: "work") {
         title
+        url
        }
     }
 `;
@@ -12,13 +13,13 @@ const ListEntries = () => {
     const { loading, error, data } = useQuery(GET_ENTRIES);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
-    console.log(data)
+    
     return (
         <ul>
             {
                 data.entries.map((entry, index) => {
                     return (
-                        <Entry entry={entry.title} key={index} />
+                        <Entry entry={{content: entry.title, url: entry.url}} key={index} />
                     )
 
                 })

@@ -7,8 +7,8 @@ import App from './components/App';
 
 
 const client = new ApolloClient({
-  uri: 'http://onegr.test/api',
-  cache: new InMemoryCache()
+  uri: 'https://onegr.com/api',
+  cache: new InMemoryCache(),
 })
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

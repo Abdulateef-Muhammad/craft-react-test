@@ -1,6 +1,8 @@
-const Entry = (content) => {
-    return(
-        <li>{content.entry}</li>
+const Entry = (props) => {
+    return (
+        <li>
+            <a href={props.entry.url} target="_blank">{props.entry.content}</a>
+        </li>
     )
 }
 
